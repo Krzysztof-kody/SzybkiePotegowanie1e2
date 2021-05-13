@@ -1,7 +1,23 @@
 package com.company;
 
 public class Main {
-    static int szPotegowanie(int a, int n){
+
+        static int szPotegowanieI(int a, int n) {
+            int wynik = 1;
+            while(n > 0) {
+                if(n % 2 == 1) {
+                    wynik *= a;
+                    n--;
+                }
+                else {
+                    a *= a;
+                    n /=2;
+                }
+            }
+            return wynik;
+        }
+
+        static int szPotegowanie(int a, int n){
         System.out.print(".");
         if(n == 1){
             return a;
@@ -16,5 +32,7 @@ public class Main {
     }
     public static void main(String[] args) {
         System.out.println(szPotegowanie(2,10));
+        System.out.println(szPotegowanieI(2,10));
+
     }
 }
